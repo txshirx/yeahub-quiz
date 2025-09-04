@@ -1,0 +1,12 @@
+.complexityContainer {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filterItem {
+    margin-top: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 20;
+}

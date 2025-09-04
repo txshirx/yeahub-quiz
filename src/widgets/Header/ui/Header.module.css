@@ -1,0 +1,75 @@
+.header {
+  height: 100px;
+  position: fixed;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+
+.headerContainer {
+  width: 1200px;
+  margin-inline: auto;
+}
+
+.headerInner {
+  display: flex;
+  justify-content: space-between;
+  font-size: 16px;
+  align-items: center;
+}
+
+.headerLeft {
+  display: flex;
+  gap: 50px;
+  min-width: 170px;
+  font-size: 22px;
+  font-weight: 800;
+  align-items: center;
+  color: var(--text-main);
+}
+
+.headerLogo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.headerNav {
+  display: flex;
+}
+
+.headerNav button {
+  font-size: 16px;
+  margin-right: 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.headerNav button:last-child {
+  margin-right: 0;
+}
+
+.headerRight {
+  display: flex;
+  gap: 15px;
+}
+
+.headerLogin {
+  color: var(--main-yeahub);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.headerRegister {
+  border-radius: 12px;
+  padding: 13px 13px;
+  background-color: var(--main-yeahub);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
