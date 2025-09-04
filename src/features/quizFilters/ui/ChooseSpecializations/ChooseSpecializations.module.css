@@ -1,0 +1,12 @@
+.specializationsContainer {
+    display: flex;
+    width: 500px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filterItem {
+    display: flex;
+    flex-direction: column;
+    gap: 20
+}

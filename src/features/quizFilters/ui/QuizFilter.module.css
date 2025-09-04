@@ -1,0 +1,10 @@
+.quizFilters {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sideBar {
+    display: flex;
+    flex-direction: column;
+    gap: 25;
+}

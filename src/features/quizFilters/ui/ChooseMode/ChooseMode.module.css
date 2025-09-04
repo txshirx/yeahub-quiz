@@ -1,0 +1,12 @@
+.modeContainer {
+    display: flex;
+    width: 400px;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.filterItem {
+    display: flex;
+    flex-direction: column;
+    gap: 20;
+}
