@@ -1,31 +1,34 @@
-import { useAppSelector } from "@/app/providers/store/store"
-import { quizQuery } from "../api/quiz.api"
 import { ChooseComplexity } from "./ChooseComplexity/ChooseComplexity"
-import { ChooseCount } from "./ChooseCount/ChooseCount"
 import { ChooseMode } from "./ChooseMode/ChooseMode"
 import { ChooseSkills } from "./ChooseSkills/ChooseSkills"
 import styles from './QuizFilter.module.css'
-import { quizFiltersSlice } from "../model/quizFilters.slice"
-import { useDebounce } from "@/shared/hooks"
-import type { FiltersParamsType } from "@/shared/config/api/types"
+import { ChooseSpecializations } from "./ChooseSpecializations/ChooseSpecializations"
+import { ChooseLimit } from "./ChooseLimit/ChooseLimit"
+import { StartQuizButton } from "@/shared/ui/components"
+import { useFilterParams } from "../model/hooks/useFilterParams"
+import { useAppSelector } from "@/app/providers/store/store"
+import { newQuizSlice } from "@/shared/slices/quiz.slice"
+import { quizQuery } from "../api/quiz.api"
+
 
 export const QuizFilters = () => {
-    const params = useAppSelector(state => quizFiltersSlice.selectors.selectAllParams(state))
-    const debauncedValue = useDebounce(params, 300)
-    const {data} = quizQuery.useGetQuizQuery(debauncedValue as FiltersParamsType)
+    const { filtersParams: params } = useFilterParams()
+    const newQuizFlag = useAppSelector(state => newQuizSlice.selectors.selectNewQuizFlag(state))
+    const { data } = quizQuery.useGetQuizQuery(params, { skip: newQuizFlag })
     console.log(data)
 
     return (
         <div className={styles.quizFilters}>
-            
             <div className={styles.sideBar}>
                 <h2>Собеседование</h2>
+                <ChooseSpecializations/>
                 <ChooseSkills/>
             </div>
             <div className={styles.sideBar}>
                 <ChooseComplexity/>
                 <ChooseMode/>
-                <ChooseCount/>
+                <ChooseLimit/>
+                <StartQuizButton title="Начать"/>
             </div>
         </div>
     )

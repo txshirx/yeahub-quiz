@@ -1,3 +1,5 @@
+import type { ModeType } from "@/shared/config/api/types"
+
 export const COMPLEXITY = {
     '1-3': [1, 2, 3],
     '4-6': [4, 5, 6],
@@ -10,3 +12,7 @@ export const MODE = {
     2: { value: 'NEW', title: 'Только новые' },
     3: { value: 'RANDOM', title: 'Случайные  ' } 
 }
+
+export const REACT_DEVELOPER_ID = 11
+export const DEFAULT_LIMIT_VALUE = 10
+export const DEFAULT_MODE: ModeType = 'RANDOM'

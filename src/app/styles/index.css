@@ -59,9 +59,6 @@ button {
   font-size: 16px;
 } 
 
-button:hover {
-  border-color: #6A0BFF;
-}
 
 
 @media (prefers-color-scheme: light) {

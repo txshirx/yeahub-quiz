@@ -1,3 +1,3 @@
-import { filtersApi } from "./model/filters.api";
+import { filtersApi } from "./api/filters.api";
 
 export  { filtersApi }

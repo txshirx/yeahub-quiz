@@ -3,3 +3,7 @@
   height: 20px;
   object-fit: cover;
 }
+
+.isActive {
+  border-color: var(--main-yeahub);
+}
