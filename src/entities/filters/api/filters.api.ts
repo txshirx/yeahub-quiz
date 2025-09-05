@@ -1,5 +1,5 @@
 import { baseApi } from "@/shared/config/api/baseApi";
-import type { SkillsType, SpecializationsType } from "./types";
+import type { SkillsType, SpecializationsType } from "../model/types";
 
 export const filtersApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({

@@ -13,15 +13,15 @@ export const router = createBrowserRouter([
     {
         path: ROUTES.QUIZ_CREATE,
         element: <AppLayout><QuizCreatePage/></AppLayout>,
-        loader: async () => {
-            const skills = await store.dispatch(
-                filtersApi.endpoints.getSkills.initiate()
-            ).unwrap()
-            const specializations = await store.dispatch(
-                filtersApi.endpoints.getSpecializations.initiate()
-            ).unwrap()
-            return { skills, specializations }
-        }
+        // loader: async () => {
+        //     const skills = await store.dispatch(
+        //         filtersApi.endpoints.getSkills.initiate()
+        //     ).unwrap()
+        //     const specializations = await store.dispatch(
+        //         filtersApi.endpoints.getSpecializations.initiate()
+        //     ).unwrap()
+        //     return { skills, specializations }
+        // }
     },
     {
         path: ROUTES.QUIZ,

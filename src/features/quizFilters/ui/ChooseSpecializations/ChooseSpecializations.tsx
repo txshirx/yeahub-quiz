@@ -1,9 +1,11 @@
 import { filtersApi } from '@/entities/filters'
-import { FilterButton } from '@/shared/ui/components/FilterButton'
 import styles from './ChooseSpecializations.module.css'
+import { useFilterParams } from '../../model/hooks/useFilterParams'
+import { FilterButton } from '../FilterButton/FilterButton'
 
 export const ChooseSpecializations = () => {
     const { data, isLoading } = filtersApi.useGetSpecializationsQuery()
+    const { updateFilters } = useFilterParams()
 
     if (isLoading) return <>Loading...</>
 
@@ -13,7 +15,7 @@ export const ChooseSpecializations = () => {
                 <p>Специализация</p>
                 <div className={styles.specializationsContainer}>
                     {data?.data.map(item => (
-                        <FilterButton key={item.id} title={item.title} id={item.id}/>
+                        <FilterButton action={() => updateFilters('specializations', item.id)} key={item.id} title={item.title} filter='specializations' data={String(item.id)}/>
                     ))}
                 </div>  
                 

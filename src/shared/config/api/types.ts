@@ -1,7 +1,10 @@
 export type ModeType = 'NEW' | 'REPEAT' | 'RANDOM'
+
 export type FiltersParamsType = {
     limit: number,
-    skills: string[],
+    skills: number[],
     complexity: number[],
-    // mode: ModeType
+    mode: ModeType,
+    specializations: number,
 }
+

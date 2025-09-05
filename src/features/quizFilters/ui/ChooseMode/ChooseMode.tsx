@@ -1,16 +1,11 @@
-import { FilterButton } from "@/shared/ui/components/FilterButton"
 import { MODE } from "../../model/constants"
 import styles from './ChooseMode.module.css'
-import { useAppDispatch } from "@/app/providers/store/store"
 import type { ModeType } from "@/shared/config/api/types"
-import { quizFiltersSlice } from "../../model/quizFilters.slice"
+import { useFilterParams } from "../../model/hooks/useFilterParams"
+import { FilterButton } from "../FilterButton/FilterButton"
 
 export const ChooseMode = () => {
-    const dispatch = useAppDispatch()
-
-    // const addModeHandler = (mode: ModeType) => {
-    //     dispatch(quizFiltersSlice.actions.addMode({ mode }))
-    // }
+    const { updateFilters } = useFilterParams()
 
     return (
         <div >
@@ -18,7 +13,7 @@ export const ChooseMode = () => {
                 <p>Выберите режим</p>
                 <div className={styles.modeContainer}>
                     {(Object.values(MODE)).map((item, ind) => (
-                        <FilterButton  key={ind} title={item.title} id={ind}/>
+                        <FilterButton action={() => updateFilters('mode', item.value as ModeType)} filter='mode' key={ind} title={item.title} data={item.value}/>
                     ))}
                 </div>  
             </div>

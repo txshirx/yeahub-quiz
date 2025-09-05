@@ -1,4 +1,4 @@
-import type { FiltersParamsType } from "@/shared/config/api/types"
+import type { FiltersParamsType, ModeType } from "@/shared/config/api/types"
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 
 
@@ -8,7 +8,8 @@ const initialState: FiltersParamsType = {
     limit: 10,
     skills: [],
     complexity: [],
-    // mode: 'RANDOM'
+    mode: 'RANDOM',
+    specializations: 11
 }
 
 export const quizFiltersSlice = createSlice({
@@ -30,16 +31,19 @@ export const quizFiltersSlice = createSlice({
                 state.complexity = state.complexity.filter(item => !action.payload.value.includes(item))
             )
         },
-        changeSkills: (state, action: PayloadAction<{ skill: string }>) => {
+        changeSkills: (state, action: PayloadAction<{ skill: number }>) => {
             if (!state.skills.includes(action.payload.skill)) {
                 state.skills = [...state.skills, action.payload.skill]
             } else {
                 state.skills = state.skills.filter(item => item !== action.payload.skill)
             }
         },
-        // addMode: (state, action: PayloadAction<{ mode: ModeType }>) => {
-        //     state.mode = action.payload.mode
-        // }
+        addMode: (state, action: PayloadAction<{ mode: ModeType }>) => {
+            state.mode = action.payload.mode
+        },
+        changeSpecializations: (state, action: PayloadAction<{ id: number }>) => {
+            state.specializations = action.payload.id
+        }   
     },
     selectors: {
         selectCount: (state) => state.limit,
