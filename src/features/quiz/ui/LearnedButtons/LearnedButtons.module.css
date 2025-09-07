@@ -1,0 +1,31 @@
+
+.learnedButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 120px;
+  height: 44px;
+  padding: 10px 12px;
+
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: #474747;
+  font-size: 16px;
+}
+
+
+.learnedButton:hover {
+  background: #f8f6ff;
+  color: var(--main-yeahub);
+  transition: ease-in-out 300ms;
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 16px;
+}

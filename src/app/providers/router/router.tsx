@@ -1,38 +1,31 @@
-import { filtersApi } from "@/entities/filters";
 import { QuizCreatePage } from "@/pages/quiz/QuizCreatePage";
 import { ROUTES } from "@/shared/config/router/routes";
 import { createBrowserRouter } from "react-router-dom";
-import { store } from "../store/store";
 import { AppLayout } from "@/app/layouts/AppLayout";
+import { QuizPage } from "@/pages/quiz/QuizPage";
+import { QuizResultPage } from "@/pages/quiz/QuizResultPage/ui/QuizResultPage";
+import { QuestionPage } from "@/pages/question";
+import { MainPage } from "@/pages/main";
 
 export const router = createBrowserRouter([
     {
         path: ROUTES.MAIN,
-        element: <></>
+        element: <AppLayout><MainPage/></AppLayout>
     },
     {
         path: ROUTES.QUIZ_CREATE,
         element: <AppLayout><QuizCreatePage/></AppLayout>,
-        // loader: async () => {
-        //     const skills = await store.dispatch(
-        //         filtersApi.endpoints.getSkills.initiate()
-        //     ).unwrap()
-        //     const specializations = await store.dispatch(
-        //         filtersApi.endpoints.getSpecializations.initiate()
-        //     ).unwrap()
-        //     return { skills, specializations }
-        // }
     },
     {
         path: ROUTES.QUIZ,
-        element: <></>
+        element: <AppLayout><QuizPage/></AppLayout>
     },
     {
         path: ROUTES.QUIZ_RESULT,
-        element: <></>
+        element: <AppLayout><QuizResultPage/></AppLayout>
     },
     {
         path: ROUTES.QUESTION,
-        element: <></>
+        element: <AppLayout> <QuestionPage/></AppLayout>
     },
 ])

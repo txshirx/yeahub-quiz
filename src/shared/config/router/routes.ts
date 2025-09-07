@@ -3,5 +3,6 @@ export const ROUTES = {
     QUIZ_CREATE: '/quiz',
     QUIZ: '/new',
     QUIZ_RESULT: '/result',
-    QUESTION: '/questions/:questionId'
+    QUESTION: '/questions/:questionId',
+    QUESTIONS: '/questions'
 } as const 

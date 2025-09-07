@@ -1,0 +1,6 @@
+.completeButton {
+    padding: 20px 40px;
+    background-color: var(--main-yeahub);
+    color: white;
+    border: none;
+}
