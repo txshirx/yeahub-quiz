@@ -1,7 +1,7 @@
 import { Header } from "@/widgets/Header"
 import { PassedQuestions, QuizNavigation } from "@/widgets/Quiz"
 import style from './QuizResultPage.module.css'
-import { ButtonRestart } from "./ButtonRestart/ButtonRestart"
+import { ButtonRestart } from "@/features/quiz"
 
 export const QuizResultPage = () => {
     return (

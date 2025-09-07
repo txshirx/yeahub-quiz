@@ -1,5 +1,5 @@
 import { DislikeIcon, LikeIcon, QuestionMockIcon } from '@/shared/ui/icons'
-import styles from './PreviewQuestionCard.module.css'
+import styles from './PassedQuestionCard.module.css'
 import { useNavigate } from 'react-router-dom'
 import { ROUTES } from '@/shared/config/router/routes'
 import type { IsAnsweredStatusType } from '@/shared/config/model/types'

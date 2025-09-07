@@ -59,7 +59,7 @@ export const QuestionCard = () => {
                     <span>Навыки:</span>
                     <div className={styles.tags}>
                         {data?.questionSkills.map((item) => (
-                            <RatingItem title={item.title}/>
+                            <RatingItem key={item.id} title={item.title}/>
                         ))}
                     </div>
                 </div>
