@@ -1,8 +1,8 @@
-import { MODE } from "../../model/constants"
 import styles from './ChooseMode.module.css'
 import type { ModeType } from "@/shared/config/api/types"
 import { useFilterParams } from "../../model/hooks/useFilterParams"
 import { FilterButton } from "../FilterButton/FilterButton"
+import { MODE } from '@/shared/constants'
 
 export const ChooseMode = () => {
     const { updateFilters } = useFilterParams()

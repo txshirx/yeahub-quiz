@@ -1,8 +1,8 @@
 
-import { COMPLEXITY } from "../../model/constants"
 import styles from './ChooseComplexity.module.css'
 import { useFilterParams } from '../../model/hooks/useFilterParams'
 import { FilterButton } from "../FilterButton/FilterButton"
+import { COMPLEXITY } from '@/shared/constants'
 
 export const ChooseComplexity = () => {
     const { updateFilters } = useFilterParams()

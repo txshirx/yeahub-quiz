@@ -1,23 +1,27 @@
 import type { FiltersParamsType, ModeType } from "@/shared/config/api/types";
 import { useCallback, useEffect, useMemo } from "react";
-import { useSearchParams } from "react-router-dom";
-import { DEFAULT_MODE, DEFAULT_LIMIT_VALUE, REACT_DEVELOPER_ID } from "../constants";
+import { useLocation, useSearchParams } from "react-router-dom";
+import { ROUTES } from "@/shared/config/router/routes";
+import { DEFAULT_MODE, DEFAULT_LIMIT_VALUE, REACT_DEVELOPER_ID } from "@/shared/constants";
 
 export const useFilterParams = () => {
     const [searchParams, setSearchParams] = useSearchParams()
     const params = new URLSearchParams(searchParams)
+    const location = useLocation()
 
     useEffect(() => {
-        if (!searchParams.get('mode')) {
-            params.set('mode', DEFAULT_MODE)
+        if (location.pathname === ROUTES.QUIZ_CREATE) {
+            if (!searchParams.get('mode')) {
+                params.set('mode', DEFAULT_MODE)
+            }
+            if (!searchParams.get('limit')) {
+                params.set('limit', String(DEFAULT_LIMIT_VALUE))
+            }
+            if (!searchParams.get('specializations')) {
+                params.set('specializations', String(REACT_DEVELOPER_ID))
+            }
+            setSearchParams(params)
         }
-        if (!searchParams.get('limit')) {
-            params.set('limit', String(DEFAULT_LIMIT_VALUE))
-        }
-        if (!searchParams.get('specializations')) {
-            params.set('specializations', String(REACT_DEVELOPER_ID))
-        }
-        setSearchParams(params)
     }, [searchParams])
 
     const filtersParams: FiltersParamsType = useMemo(() => {

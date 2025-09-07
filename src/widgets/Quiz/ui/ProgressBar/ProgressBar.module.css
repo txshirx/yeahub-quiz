@@ -1,0 +1,33 @@
+.progressBarContainer {
+    margin-inline: auto;
+}
+
+.progressBar {
+    width: 1000px;
+    border-radius: 24px;
+    padding: 24px 30px;
+    box-shadow: 0px 4px 10px 0px #6A63761A;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-self: start;
+    flex-wrap: wrap;
+    gap: 20px
+}
+
+.progressBarNav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.line {
+    width: 1000px;
+    height: 3px;
+    background-color: #E1CEFF;
+}
+
+.progressLine {
+    height: 3px;
+    background-color: var(--main-yeahub);
+}

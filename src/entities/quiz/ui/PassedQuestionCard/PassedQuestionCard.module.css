@@ -1,0 +1,40 @@
+.questionImage {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+.previewCardContainer {
+  max-width: 480px;
+  padding: 10px 0px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #E8E8E8;
+  cursor: pointer;
+}
+
+.mainContent {
+  display: flex;
+  flex-direction: column;
+  gap: 10px
+}
+
+.learnedButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  width: 120px;
+  height: 44px;
+  padding: 10px 12px;
+
+  border-radius: 12px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  color: #474747;
+  font-size: 16px;
+}

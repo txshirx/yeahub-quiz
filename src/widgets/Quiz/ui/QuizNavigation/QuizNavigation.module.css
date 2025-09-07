@@ -1,0 +1,15 @@
+.quizNavContainer {  
+    margin-top: 130px;  
+}
+
+.quizNavContainer span {
+    font-size: 18px;
+    color: var(--main-yeahub)
+}
+
+.content {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    text-align: center;
+}

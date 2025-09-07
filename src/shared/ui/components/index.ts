@@ -1,3 +1,4 @@
-import { StartQuizButton } from "./StartQuizButton/StartQuizButton";
+import { Answer } from "./Answer/Answer";
+import { RatingItem } from "./RatingItem/RatingItem";
 
-export { StartQuizButton } 
+export { Answer, RatingItem } 

@@ -4,18 +4,26 @@ import { ChooseSkills } from "./ChooseSkills/ChooseSkills"
 import styles from './QuizFilter.module.css'
 import { ChooseSpecializations } from "./ChooseSpecializations/ChooseSpecializations"
 import { ChooseLimit } from "./ChooseLimit/ChooseLimit"
-import { StartQuizButton } from "@/shared/ui/components"
 import { useFilterParams } from "../model/hooks/useFilterParams"
-import { useAppSelector } from "@/app/providers/store/store"
-import { newQuizSlice } from "@/shared/slices/quiz.slice"
-import { quizQuery } from "../api/quiz.api"
-
+import { useNavigate } from "react-router-dom"
+import { useEffect } from "react"
+import { useLocalStorage } from "@/shared/hooks"
+import { STORAGE_KEYS } from "@/shared/constants"
+import type { Question } from "@/shared/config/api/types"
+import { ROUTES } from "@/shared/config/router/routes"
+import { StartQuizButton } from "./StartQuizButton/StartQuizButton"
 
 export const QuizFilters = () => {
-    const { filtersParams: params } = useFilterParams()
-    const newQuizFlag = useAppSelector(state => newQuizSlice.selectors.selectNewQuizFlag(state))
-    const { data } = quizQuery.useGetQuizQuery(params, { skip: newQuizFlag })
-    console.log(data)
+    const { filtersParams } = useFilterParams() 
+    const { storageValue: questions } = useLocalStorage<Question[]>(STORAGE_KEYS.QUESTIONS_KEY)
+    const navigate = useNavigate()
+    const { storageValue } = useLocalStorage(STORAGE_KEYS.IS_ACTIVE)
+
+    useEffect(() => {
+        if (questions && storageValue) {
+            navigate(ROUTES.QUIZ)
+        }
+    }, [])
 
     return (
         <div className={styles.quizFilters}>
@@ -28,7 +36,7 @@ export const QuizFilters = () => {
                 <ChooseComplexity/>
                 <ChooseMode/>
                 <ChooseLimit/>
-                <StartQuizButton title="Начать"/>
+                <StartQuizButton params={filtersParams} title="Начать"/>
             </div>
         </div>
     )

@@ -1,0 +1,10 @@
+.ratingItemContent {
+    padding: 6px 10px;
+    max-height: 34px;
+    background-color: '#f8f6ff';
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--main-yeahub)
+}
