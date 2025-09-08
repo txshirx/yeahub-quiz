@@ -19,7 +19,6 @@ export const useLocalStorage = <T,>(key: string, initialValue?: T) => {
     };
 
     const getStorageValue = <T,>(newKey: string) => {
-        
         return JSON.parse(localStorage.getItem(newKey) as string) as T
     }
 
