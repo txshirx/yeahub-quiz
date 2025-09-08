@@ -2,7 +2,7 @@ import type { Question } from "@/shared/config/api/types"
 import { RatingItem } from "@/shared/ui/components"
 import style from './QuestionFiltersCard.module.css'
 
-export const QuestionFiltersCard = ({ data } : { data: Question }) => {
+export const QuestionFiltersCard = ({ data } : { data: Question | undefined }) => {
     return (
         <div className={style.rightColumn}>
                 <div>
