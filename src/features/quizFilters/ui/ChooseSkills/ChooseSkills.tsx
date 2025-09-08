@@ -1,11 +1,11 @@
-import { filtersApi } from '@/entities/filters'
 import styles from './ChooseSkills.module.css'
 import { useFilterParams } from '../../model/hooks/useFilterParams'
 import { FilterButton } from '../FilterButton/FilterButton'
+import { skillsApi } from '@/entities/skills'
 
 
 export const ChooseSkills = () => {
-    const { data, isLoading } = filtersApi.useGetSkillsQuery()
+    const { data, isLoading } = skillsApi.useGetSkillsQuery()
     const { updateFilters } = useFilterParams()
 
     if (isLoading) return <>Loading...</>

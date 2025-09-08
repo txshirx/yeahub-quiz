@@ -52,3 +52,8 @@
   object-fit: cover;
   border-radius: 24px;
 }
+
+.showText {
+  color: var(--main-yeahub);
+  cursor: pointer;
+}

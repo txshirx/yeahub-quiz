@@ -1,0 +1,7 @@
+.wrapper {
+    display: flex;
+    gap: 20px;
+    width: 1200px;
+    margin-inline: auto;
+    margin-top: 40px;
+}

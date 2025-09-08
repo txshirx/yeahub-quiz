@@ -1,4 +1,4 @@
-import { QuestionCard } from "./ui/QuestionCard/QuestionCard";
+import { QuizQuestionCard } from "./ui/QuizQuestionCard/QuizQuestionCard";
 import { PassedQuestionCard } from "./ui/PassedQuestionCard/PassedQuestionCard";
 
-export { QuestionCard, PassedQuestionCard }
+export { QuizQuestionCard, PassedQuestionCard }

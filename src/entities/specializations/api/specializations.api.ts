@@ -1,12 +1,8 @@
 import { baseApi } from "@/shared/config/api/baseApi";
-import type { SkillsType, SpecializationsType } from "../model/types";
+import type { SpecializationsType } from "../model/types";
 
-export const filtersApi = baseApi.injectEndpoints({
+export const specializationsApi = baseApi.injectEndpoints({
     endpoints: (builder) => ({
-        getSkills: builder.query<{ data: SkillsType[] }, void>({
-            query: () => '/skills',
-            providesTags: ['Skills']
-        }),
         getSpecializations: builder.query<{ data: SpecializationsType[] }, void>({
             query: () => '/specializations',
             providesTags: ['Specializations']

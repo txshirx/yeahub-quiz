@@ -1,10 +1,10 @@
-import { filtersApi } from '@/entities/filters'
 import styles from './ChooseSpecializations.module.css'
 import { useFilterParams } from '../../model/hooks/useFilterParams'
 import { FilterButton } from '../FilterButton/FilterButton'
+import { specializationsApi } from '@/entities/specializations'
 
 export const ChooseSpecializations = () => {
-    const { data, isLoading } = filtersApi.useGetSpecializationsQuery()
+    const { data, isLoading } = specializationsApi.useGetSpecializationsQuery()
     const { updateFilters } = useFilterParams()
 
     if (isLoading) return <>Loading...</>

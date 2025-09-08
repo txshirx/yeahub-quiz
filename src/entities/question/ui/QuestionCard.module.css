@@ -1,29 +1,7 @@
-.wrapper {
-    display: flex;
-    gap: 20px;
-    width: 1200px;
-    margin-inline: auto;
-    margin-top: 40px;
-}
-
 .leftColumn {
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-
-.backButton {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
-    margin-top: 80px;
-}
-
-.backText {
-    font-size: 20px;
-    color: var(--main-yeahub, #6A0BFF);
-    line-height: 0.5;
 }
 
 .card {
@@ -47,25 +25,6 @@
     font-size: 24px;
     line-height: 0.5;
     margin-bottom: 12px;
-}
-
-.rightColumn {
-    margin-top: 150px;
-    width: 390px;
-    display: flex;
-    align-self: flex-start;
-    flex-direction: column;
-    gap: 24px;
-    background-color: white;
-    border-radius: 24px;
-    padding: 24px;
-}
-
-.tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin: 10px 0;
 }
 
 .keyword {
