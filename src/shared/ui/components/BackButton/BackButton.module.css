@@ -1,0 +1,13 @@
+.backButton {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    margin-top: 80px;
+}
+
+.backText {
+    font-size: 20px;
+    color: var(--main-yeahub, #6A0BFF);
+    line-height: 0.5;
+}
