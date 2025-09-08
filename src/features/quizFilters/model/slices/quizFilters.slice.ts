@@ -1,9 +1,6 @@
 import type { FiltersParamsType, ModeType } from "@/shared/config/api/types"
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit"
 
-
-
-
 const initialState: FiltersParamsType = {
     limit: 10,
     skills: [],

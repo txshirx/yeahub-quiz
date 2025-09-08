@@ -12,7 +12,7 @@ export const StartQuizButton = ({ title, params } : { title: string, params: Fil
     const { setStorageValue: setActiveQuestion } = useLocalStorage(STORAGE_KEYS.ACTIVE_QUESTION_KEY, 1) 
     const [ getQuiz, {data, isLoading} ] = quizQuery.useLazyGetQuizQuery()
     const { setStorageValue: setQuestions } = useLocalStorage(STORAGE_KEYS.QUESTIONS_KEY, data?.questions)
-    const { setStorageValue: setIsActive } = useLocalStorage(STORAGE_KEYS.IS_ACTIVE, true)
+    const { setStorageValue: setIsActive } = useLocalStorage(STORAGE_KEYS.QUIZ_IS_ACTIVE, true)
 
     console.log(data)
     const handleStartQuiz = async () => {

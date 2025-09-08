@@ -17,10 +17,10 @@ export const QuizFilters = () => {
     const { filtersParams } = useFilterParams() 
     const { storageValue: questions } = useLocalStorage<Question[]>(STORAGE_KEYS.QUESTIONS_KEY)
     const navigate = useNavigate()
-    const { storageValue } = useLocalStorage(STORAGE_KEYS.IS_ACTIVE)
+    const { storageValue: quizIsActive } = useLocalStorage(STORAGE_KEYS.QUIZ_IS_ACTIVE)
 
     useEffect(() => {
-        if (questions && storageValue) {
+        if (questions && quizIsActive) {
             navigate(ROUTES.QUIZ)
         }
     }, [])
