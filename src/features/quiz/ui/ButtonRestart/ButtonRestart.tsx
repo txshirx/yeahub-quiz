@@ -8,15 +8,15 @@ import type { Question } from '@/shared/config/api/types'
 
 export const ButtonRestart = () => {
     const navigate = useNavigate()
-    const { setStorageValue } = useLocalStorage(STORAGE_KEYS.ACTIVE_QUESTION_KEY, 1)
+    const { setStorageValue: setAactiveQuestion } = useLocalStorage(STORAGE_KEYS.ACTIVE_QUESTION_KEY, 1)
     const { clearLocalStorageItem: clearAnswered } = useLocalStorage(STORAGE_KEYS.ANSWERED_QUESTIONS_KEY)
     const { setStorageValue: setIsLearned } = useLocalStorage(STORAGE_KEYS.IS_LEARNED_KEY)
     const { storageValue: questions } = useLocalStorage<Question[]>(STORAGE_KEYS.QUESTIONS_KEY)
-    const { setStorageValue: setIsActive } = useLocalStorage(STORAGE_KEYS.IS_ACTIVE, true)
+    const { setStorageValue: setIsActive } = useLocalStorage(STORAGE_KEYS.QUIZ_IS_ACTIVE, true)
 
 
     const handleRestart = () => {
-        setStorageValue(1)
+        setAactiveQuestion(1)
         setIsActive(true)
         clearAnswered()
         navigate(ROUTES.QUIZ)

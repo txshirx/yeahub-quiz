@@ -4,6 +4,6 @@ export const STORAGE_KEYS = {
     ANSWERED_QUESTIONS_KEY: 'answered_questions',
     QUESTIONS_KEY: 'questions',
     IS_LEARNED_KEY: 'is_learned',
-    IS_ACTIVE: 'is_active',
+    QUIZ_IS_ACTIVE: 'quiz_is_active',
     PASSED_QUESTIONS: 'passed_questions'
 } as const

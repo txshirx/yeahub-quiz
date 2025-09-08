@@ -7,11 +7,8 @@ import { QuestionFiltersCard } from "./QuestionFiltersCard/QuestionFiltersCard";
 
 export const QuestionPage = () => {
     const { questionId: id } = useParams<{ questionId: string }>();
-    
-
     const { data } = questionQuery.useGetQuestionQuery(Number(id));
 
-    
     return (
         <div className={style.wrapper}>
             <Header/>
